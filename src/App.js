@@ -1,23 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from "react";
+
+function GetNewFact({onButtonClick}){
+  return(
+    <button className = "newButton" onClick = {onButtonClick}>
+      Get New Fact!
+    </button>
+  );
+}
+
 
 function App() {
+  function fetchData(){
+    fetch('https://catfact.ninja/fact')
+      .then(response => response.json())
+      .then(data =>{
+        setFact(data.fact);
+        setLength(data.length);
+      })
+  }
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const [fact, setFact] = useState("");
+  const [length, setLength] = useState(0);
+   
+  function handleClick(){
+    fetchData();
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className = "main">
+      <p className = "catFact-title">Cat Fact of the day:</p>
+      <p className = "catFact-content">{fact} </p>
+      <p className = "catFact-length">This fact was {length} characters long. </p>
+      <GetNewFact onButtonClick = {() => handleClick()}/>
     </div>
   );
 }

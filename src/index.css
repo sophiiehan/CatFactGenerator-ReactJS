@@ -11,3 +11,34 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.main{
+  margin: auto;
+  margin-top: 15vh;
+  align-self: center;
+  padding: 5px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  border: 3px solid rgb(255,117,40);
+  border-radius: 12px;
+  width: 40vw;
+  height: 60vh;
+}
+.catFact-title{
+  color: rebeccapurple;
+  text-align: center;
+  font-size: 30px;
+}
+.catFact-content, .catFact-length{
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 10vh;
+}
+.newButton{
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px;
+  background-color: wheat;
+  border: 1px solid black;
+}
