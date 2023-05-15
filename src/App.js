@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 function GetNewFact({onButtonClick}){
   return(
     <button className = "newButton" onClick = {onButtonClick}>
-      Get New Fact!
+      Get New Cat Fact!
     </button>
   );
 }
