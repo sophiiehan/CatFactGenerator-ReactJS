@@ -12,11 +12,14 @@ function GetNewFact({onButtonClick}){
 
 function App() {
   function fetchData(){
-    fetch('https://catfact.ninja/fact')
+    fetch('https://schedule-yoyys2e5pq-uc.a.run.app/api/schedule',{
+      method: "GET"
+    })
       .then(response => response.json())
       .then(data =>{
-        setFact(data.fact);
-        setLength(data.length);
+        console.log(data);
+        // setFact(data.fact);
+        // setLength(data.length);
       })
   }
   useEffect(() => {
